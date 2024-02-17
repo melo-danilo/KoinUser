@@ -1,6 +1,7 @@
-package com.dracco.koinusergithub.api.service
+package com.dracco.koinusergithub.api.service.useCase
 
 import com.dracco.koinusergithub.api.model.response.SearchResponse
+import com.dracco.koinusergithub.api.service.SearchService
 import retrofit2.Response
 
 class SearchServiceImpl(

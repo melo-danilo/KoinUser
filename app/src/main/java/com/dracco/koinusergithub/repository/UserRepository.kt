@@ -1,7 +1,7 @@
 package com.dracco.koinusergithub.repository
 
 import com.dracco.koinusergithub.api.model.response.User
-import com.dracco.koinusergithub.api.service.UserServiceImpl
+import com.dracco.koinusergithub.api.service.useCase.UserServiceImpl
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import java.lang.Exception

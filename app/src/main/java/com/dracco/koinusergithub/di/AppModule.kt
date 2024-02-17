@@ -1,7 +1,7 @@
 package com.dracco.koinusergithub.di
 
 import com.dracco.koinusergithub.api.service.UserService
-import com.dracco.koinusergithub.api.service.UserServiceImpl
+import com.dracco.koinusergithub.api.service.useCase.UserServiceImpl
 import com.dracco.koinusergithub.repository.UserRepository
 import com.dracco.koinusergithub.utils.Constants
 import com.dracco.koinusergithub.viewModels.UserViewModel

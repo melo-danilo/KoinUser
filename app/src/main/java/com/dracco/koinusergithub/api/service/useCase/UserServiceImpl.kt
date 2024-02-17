@@ -1,6 +1,7 @@
-package com.dracco.koinusergithub.api.service
+package com.dracco.koinusergithub.api.service.useCase
 
 import com.dracco.koinusergithub.api.model.response.User
+import com.dracco.koinusergithub.api.service.UserService
 import retrofit2.Response
 
 class UserServiceImpl(
