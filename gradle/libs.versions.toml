@@ -1,0 +1,54 @@
+[versions]
+agp = "8.3.0-rc02"
+kotlin = "1.9.10"
+coreKtx = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.11.0"
+activity = "1.8.2"
+constraintlayout = "2.1.4"
+safeargs = "2.7.7"
+kspVersion = "1.9.10-1.0.13"
+kotlinPlugin = "1.8.10"
+koin = "3.5.0"
+lifecycle = "2.7.0"
+coilVersion = "2.5.0"
+moshiKotlin = "1.15.0"
+retrofit = "2.9.0"
+kotlinxCoroutines = "1.7.3"
+navigationFragmentVersion = "2.7.7"
+navigationUIVersion = "2.7.7"
+rxjava2Adapter = "2.4.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coilVersion"}
+lifecycleViewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycleLivedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+lifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+kotlinxCoroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+koinAndroid = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+moshiKotlin = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshiKotlin" }
+moshiKotlinKsp = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshiKotlin" }
+rxjava2Adapter = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "rxjava2Adapter" }
+retrofitConverterMoshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+navigationFragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentVersion" }
+navigationUi = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUIVersion" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+safeargsKotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeargs" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion"}
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize",  version.ref = "kotlinPlugin"  }
+
