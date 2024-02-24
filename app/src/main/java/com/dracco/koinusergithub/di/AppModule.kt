@@ -1,9 +1,13 @@
 package com.dracco.koinusergithub.di
 
+import com.dracco.koinusergithub.api.service.SearchService
 import com.dracco.koinusergithub.api.service.UserService
+import com.dracco.koinusergithub.api.service.useCase.SearchServiceImpl
 import com.dracco.koinusergithub.api.service.useCase.UserServiceImpl
+import com.dracco.koinusergithub.repository.SearchRepository
 import com.dracco.koinusergithub.repository.UserRepository
 import com.dracco.koinusergithub.utils.Constants
+import com.dracco.koinusergithub.viewModels.SearchViewModel
 import com.dracco.koinusergithub.viewModels.UserViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -44,10 +48,16 @@ val serviceModule = module{
     single {
         get<Retrofit>(Retrofit::class).create(UserService::class.java)
     }
+    single {
+        get<Retrofit>(Retrofit::class).create(SearchService::class.java)
+    }
 }
 val useCase = module {
     single {
         UserServiceImpl(get())
+    }
+    single {
+        SearchServiceImpl(get())
     }
 
 }
@@ -58,10 +68,16 @@ val repositoryModule = module{
     factory {
         UserRepository(get(), get())
     }
+    factory {
+        SearchRepository(get(), get())
+    }
 }
 val viewModelModule = module{
     viewModel {
-        UserViewModel(get())
+        UserViewModel(get(), get())
+    }
+    viewModel {
+        SearchViewModel(get())
     }
 }
 

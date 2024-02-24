@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dracco.koinusergithub.api.model.response.User
 import com.dracco.koinusergithub.databinding.FragmentHomeBinding
@@ -36,6 +37,23 @@ class HomeFragment : Fragment() {
 
         setupObserver()
         initList()
+        onClick()
+    }
+
+    private val onClick = {
+
+        binding.apply {
+
+            filterCard.setOnClickListener {
+                val name = editSearch.text.toString()
+
+                if (name.isNotEmpty()) {
+                    viewModel.getSearch(name)
+                } else {
+                    binding.root.showSnackBarRed("Digite um nome")
+                }
+            }
+        }
     }
 
     private fun initList() {
@@ -48,12 +66,22 @@ class HomeFragment : Fragment() {
     }
 
     private fun userOnClick(user: User) {
-        binding.root.showSnackBar(user.login)
+
+        findNavController()
+            .navigate(
+                HomeFragmentDirections
+                    .actionHomeFragmentToUserDetailFragment(user.login)
+            )
+
     }
 
     private fun setupObserver() {
 
         viewModel.getUsers()
+
+        viewModel.search.observe(viewLifecycleOwner) { response ->
+            adapter.addAll(response.items)
+        }
 
         viewModel.userList.observe(viewLifecycleOwner) { response ->
             adapter.addAll(response)
